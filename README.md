@@ -1,0 +1,2 @@
+# notestr
+Nostr Text Storage
