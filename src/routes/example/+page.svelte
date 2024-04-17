@@ -172,7 +172,8 @@
 			created_at: Math.floor(Date.now() / 1000)
 		});
 
-		pool.publish(relays, event);
+		await pool.publish(relays, event);
+		content = '';
 	}
 </script>
 

@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { nip98 } from 'nostr-tools';
 
-type ContentRecord = { Id: string; Pubkey: string; Content: string, PermittedPubkeys: string };
+type ContentRecord = { Id: string; Pubkey: string; Content: string; PermittedPubkeys: string };
 
 export const GET: RequestHandler = async ({ url, platform, request, params }) => {
 	if (platform === undefined) {
@@ -32,7 +32,7 @@ export const GET: RequestHandler = async ({ url, platform, request, params }) =>
 		error(404);
 	}
 
-    const permittedPubkeys = JSON.parse(result.PermittedPubkeys) as string[]
+	const permittedPubkeys = JSON.parse(result.PermittedPubkeys) as string[];
 	if (!permittedPubkeys.includes(event.pubkey)) {
 		error(404); // Use 404 instead of 403 not to distinguish
 	}
