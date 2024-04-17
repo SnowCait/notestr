@@ -14,7 +14,7 @@
 	import { page } from '$app/stores';
 
 	const privateNoteKind = 20001;
-	const relays: string[] = ['wss://relay.nostr.wirednet.jp/'];
+	const relays: string[] = ['wss://relay.nostr.wirednet.jp/', 'wss://nostr-relay.nokotaro.com'];
 
 	const pool = new SimplePool();
 
@@ -86,6 +86,7 @@
 						fetchMetadataEvent(event.pubkey).then((event) => {
 							if (event !== undefined) {
 								kind0Events.set(event.pubkey, event);
+								kind0Events = kind0Events;
 							}
 						});
 					}
