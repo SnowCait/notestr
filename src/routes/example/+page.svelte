@@ -14,7 +14,11 @@
 	import { page } from '$app/stores';
 
 	const privateNoteKind = 20001;
-	const relays: string[] = ['wss://relay.nostr.wirednet.jp/', 'wss://nostr-relay.nokotaro.com'];
+	const relays: string[] = [
+		'wss://nos.lol/',
+		'wss://relay.nostr.wirednet.jp/',
+		'wss://nostr-relay.nokotaro.com'
+	];
 
 	const pool = new SimplePool();
 
